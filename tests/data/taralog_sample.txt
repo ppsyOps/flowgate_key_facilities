@@ -1,0 +1,18 @@
+*** Created [C:\fake\path\taralog.txt]   Current directory - [C:\fake\path]
+***** PowerGEM Log Utility. File=C:\fake\path\taralog.txt. TARA Ver 0000.0.0.0 64-bit (SYNTHETIC TEST FIXTURE - anonymized, shortened)
+
+ Running N-1 ACCont for outage case.
+FAKESET_2026S_case1.raw. Fast Decoupled solution converged.
+Cont ID  Cont Name                                                                                                                         Status #Itr #Pms #Qms  PmaxMism    Bus# Bus Name     Volt VoltMagPU  QmaxMism    Bus# Bus Name     Volt VoltMagPU  OvlSever #Ovl  Worst VltSevrInd VLow  VHi Drop Rise 
+    12 FAKE LINE ALPHA 138_SRT-A                                                                                                           NotCnv * 70 1234 1200    99.99  100001 FAKE BUS A   500    1.0000    99.99  100002 FAKE BUS B   500    1.0000       0.0    0    0.0        0.0    0    0    0    0 
+    13 FAKE LINE BETA 138_SRT-A                                                                                                            Vlt    2    0    0      0.05  100001 FAKE BUS A   500    1.0000      0.03  100002 FAKE BUS B   500    1.0000       0.0    0    0.0        6.3    3    0    0    0 
+  1201 FAKE LINE GAMMA 500_SRT-A                                                                                                           NotCnv * 70 1234 1200    99.99  100001 FAKE BUS A   500    1.0000    99.99  100002 FAKE BUS B   500    1.0000       0.0    0    0.0        0.0    0    0    0    0 
+    14 FAKE UNIT ECHO 2_SRT-A                                                                                                              NotCnv * 70 1234 1200    99.99  100001 FAKE BUS A   500    1.0000    99.99  100002 FAKE BUS B   500    1.0000       0.0    0    0.0        0.0    0    0    0    0 
+
+ Running N-1 ACCont for outage case.
+FAKESET_2026S_case2.raw. Fast Decoupled solution converged.
+Cont ID  Cont Name                                                                                                                         Status #Itr #Pms #Qms  PmaxMism    Bus# Bus Name     Volt VoltMagPU  QmaxMism    Bus# Bus Name     Volt VoltMagPU  OvlSever #Ovl  Worst VltSevrInd VLow  VHi Drop Rise 
+    12 FAKE LINE ALPHA 138_SRT-A                                                                                                           NotCnv * 70 1234 1200    99.99  100001 FAKE BUS A   500    1.0000    99.99  100002 FAKE BUS B   500    1.0000       0.0    0    0.0        0.0    0    0    0    0 
+    21 FAKE UNIT DELTA 1_SRT-A                                                                                                             NotCnv * 70 1234 1200    99.99  100001 FAKE BUS A   500    1.0000    99.99  100002 FAKE BUS B   500    1.0000       0.0    0    0.0        0.0    0    0    0    0 
+    22 FAKE LINE FOXTROT 230_SRT-A                                                                                                         Vlt    2    0    0      0.05  100001 FAKE BUS A   500    1.0000      0.03  100002 FAKE BUS B   500    1.0000       0.0    0    0.0        6.3    3    0    0    0 
+

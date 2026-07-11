@@ -63,7 +63,10 @@ Each script module under `psse_utils/`:
 - exposes its **core logic as importable functions** (no `argparse` inside them);
 - provides a thin **`main(argv: list[str] | None = None) -> int`** that parses
   args and calls those functions;
-- is registered as a **console command** in `[project.scripts]`.
+- is registered as a **console command** in `[project.scripts]`;
+- has **no intra-package imports** — it may depend on stdlib and third-party
+  packages, but never on another `psse_utils.<script>` module, so it stays
+  copy-paste portable as a single file (see README's "Adding a script").
 
 Example (`pyproject.toml`):
 ```toml

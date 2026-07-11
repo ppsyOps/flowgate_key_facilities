@@ -1,0 +1,15 @@
+/ Synthetic contingency list for filter_taralog_notcnv tests (anonymized, shortened)
+/ Total 4 contingencies
+
+ Contingency 'FAKE LINE ALPHA 138_SRT-A'
+    Open branch from bus 100011 to bus 100012 ckt 1  /  100011 FAKE BUS A   138 100012 FAKE BUS B    138 1
+ end
+ Contingency 'FAKE LINE BETA 138_SRT-A'
+    Open branch from bus 100013 to bus 100014 ckt 1  /  100013 FAKE BUS C   138 100014 FAKE BUS D    138 1
+ end
+ Contingency 'FAKE LINE GAMMA 500_SRT-A'
+    Open branch from bus 100015 to bus 100016 ckt 1  /  100015 FAKE BUS E   500 100016 FAKE BUS F    500 1
+ end
+ Contingency 'FAKE UNIT DELTA 1_SRT-A'
+    Remove unit 1  from bus 100017                   /  100017 FAKE GEN A    18.0
+ end

@@ -31,15 +31,38 @@ flowgate-key-facilities \
 Full options: `flowgate-key-facilities --help`. Outputs `branches.csv`,
 `generators.csv`, `transformers_3w.csv`, `unresolved.csv` in `--out-dir`.
 
+### `filter-taralog-notcnv`
+
+Filter PSS/E `.con` contingency files down to only the contingencies a TARA/
+PowerGEM `taralog.txt` reports as non-convergent (`NotCnv`).
+
+~~~
+filter-taralog-notcnv --taralog taralog.txt --con "*.con" --out-dir out/
+~~~
+
+`--con` accepts one or more files or glob patterns (globs are expanded by the
+script itself, so `*.con` works the same on Windows and Linux/macOS). Each
+matched `.con` file is written to `<out-dir>/<stem>-NotCnv<suffix>` (or
+alongside the input if `--out-dir` is omitted), containing only the
+contingency blocks whose name matches a NotCnv contingency found anywhere in
+`taralog.txt` (pooled across all repeated report sections in the log).
+
+Full options: `filter-taralog-notcnv --help`.
+
 ## Adding a script
 
 1. Create `src/psse_utils/<name>.py` with the **logic as importable functions**
    plus a thin `main(argv=None) -> int` that parses args and calls them (keeping
    logic separate from the CLI leaves room for a future TUI/web UI).
-2. Add a console command in `pyproject.toml`:
+2. **No intra-package imports.** A script module may depend on stdlib and
+   third-party packages (e.g. `pandas`, `psse_model_util`) but must never
+   import another `psse_utils.<script>` module. This keeps every script
+   copy-paste portable: install its declared third-party dependencies and the
+   single `.py` file runs standalone, without the rest of this repo.
+3. Add a console command in `pyproject.toml`:
    `[project.scripts]` → `your-command = "psse_utils.<name>:main"`.
-3. Add tests `tests/test_<name>_*.py` (script-prefixed).
-4. Put any heavy/extra dependencies behind an extra in `[project.optional-dependencies]`.
+4. Add tests `tests/test_<name>_*.py` (script-prefixed).
+5. Put any heavy/extra dependencies behind an extra in `[project.optional-dependencies]`.
 
 ## Development
 

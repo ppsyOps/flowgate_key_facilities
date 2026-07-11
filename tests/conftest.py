@@ -1,9 +1,13 @@
-"""Shared fixtures for the flowgate_key_facilities CLI tests.
+"""Shared fixtures for the psse_utils CLI tests.
 
-Fixtures live in tests/data/ and are copies of the psse_model_util test
-fixtures (Model_1.raw, synthetic_flowgates.mon). The .mon defines four
-flowgates: three under security coordinator ``SCA`` and one under ``SCB``.
-Model_1.raw spans PSS/E areas 1-5.
+Fixtures live in tests/data/:
+- Model_1.raw, synthetic_flowgates.mon: copies of the psse_model_util test
+  fixtures, used by flowgate_key_facilities tests. The .mon defines four
+  flowgates: three under security coordinator ``SCA`` and one under ``SCB``.
+  Model_1.raw spans PSS/E areas 1-5.
+- taralog_sample.txt, sample_a.con, sample_b.con: synthetic (anonymized,
+  shortened) PowerGEM/TARA log and PSS/E .con fixtures used by
+  filter_taralog_notcnv tests. None of these contain real system data.
 """
 from __future__ import annotations
 
@@ -29,3 +33,18 @@ def mon_file() -> Path:
 @pytest.fixture(scope="session")
 def raw_file() -> Path:
     return DATA_DIR / "Model_1.raw"
+
+
+@pytest.fixture(scope="session")
+def taralog_file() -> Path:
+    return DATA_DIR / "taralog_sample.txt"
+
+
+@pytest.fixture(scope="session")
+def con_file_a() -> Path:
+    return DATA_DIR / "sample_a.con"
+
+
+@pytest.fixture(scope="session")
+def con_file_b() -> Path:
+    return DATA_DIR / "sample_b.con"

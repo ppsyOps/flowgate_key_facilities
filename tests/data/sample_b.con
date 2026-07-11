@@ -1,0 +1,15 @@
+/ Second synthetic contingency list — double-quoted names, a malformed
+/ quote, and a commented-out block (all observed patterns in real .con files)
+
+contingency "FAKE UNIT ECHO 2_SRT-A"
+    remove machine 1  from bus 100018    // synthetic
+end
+contingency "FAKE UNIT DELTA 1_SRT-A
+    remove machine 1  from bus 100019    // malformed: missing closing quote
+end
+/contingency "FAKE LINE ALPHA 138_SRT-A"
+/    Open branch from bus 100011 to bus 100012 ckt 1
+/end
+ Contingency 'FAKE LINE UNMATCHED_SRT-A'
+    Open branch from bus 100020 to bus 100021 ckt 1
+ end
