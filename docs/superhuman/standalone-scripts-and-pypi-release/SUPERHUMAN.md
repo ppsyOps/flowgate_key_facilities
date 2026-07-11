@@ -36,5 +36,20 @@ Environment: dev (laptop Claude Code)
 
 ## Chunk log
 
-- Chunk 1 (R1 — docs): pending
-- Chunk 2 (R2 — release): pending
+- Chunk 1 (R1 — docs): done. README.md "Adding a script" + design-spec
+  "Per-script convention" both state the no-intra-package-import rule
+  and rationale (Option A wording).
+- Chunk 2 (R2 — release): done. Committed e856fd4 on master, pushed,
+  version bumped to 2026.7.0b1, pytest 34/34 100% coverage, build +
+  twine check passed, GitHub Release v2026.7.0b1 created, publish.yml
+  green (Build, TestPyPI, PyPI all succeeded after user's reviewer
+  approval on the `pypi` environment). Clean-venv install verified:
+  `pip install --pre psse-utils==2026.7.0b1` installs both
+  `flowgate-key-facilities --help` and `filter-taralog-notcnv --help`
+  (exit 0), `pip show` confirms version 2026.7.0b1.
+
+[2026-07-11] G7: Docs sync — no drift; declared artifact set (README.md,
+  design spec, __about__.py) all present and current.
+[2026-07-11] G8: Acceptance approved; user decision: accept
+  - Project complete. psse-utils 2026.7.0b1 live on PyPI, README/design
+    spec document the no-intra-package-import convention.
